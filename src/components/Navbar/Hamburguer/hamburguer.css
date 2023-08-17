@@ -1,0 +1,160 @@
+:root {
+  --timing-animation: 400ms;
+  --width: 50px;
+  --heigh: 50px;
+  --separation: 6px;
+  --highlight-color: #f6f6f6;
+  --line-width: 50%;
+  --color-default: white;
+  --color-active: black;
+}
+.hamburguer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: var(--width);
+  height: var(--heigh);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.active .lines,
+.active .lines:before,
+.active .lines:after {
+  background: #000;
+}
+
+.lines {
+  position: relative;
+  width: var(--line-width);
+}
+.lines,
+.lines:before,
+.lines:after {
+  background: var(--color-default);
+  display: inline-block;
+  height: 2px;
+  border-radius: 5px;
+  background-clip: padding-box;
+}
+.lines:before,
+.lines:after {
+  width: 100%;
+}
+.lines::before {
+  position: absolute;
+  left: 0;
+  content: "";
+  top: var(--separation);
+  transform-origin: 50% 50%;
+  transition: top 0.3s 0.6s ease-in-out, transform 0.3s ease-in-out;
+}
+.lines::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  top: calc(var(--separation) * -1);
+  transform-origin: 50% 50%;
+  transition: top 0.3s 0.6s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hamburguer:active {
+  background-color: var(--highlight-color);
+  transition: all linear 200ms;
+}
+
+.open .lines::before {
+  animation: var(--timing-animation) openHamburguerTop forwards;
+}
+.open .lines::after {
+  animation: var(--timing-animation) openHamburguerBottom forwards;
+}
+.open .lines {
+  animation: var(--timing-animation) openHamburguerMiddle forwards;
+}
+
+.close .lines::before {
+  animation: var(--timing-animation) closeHamburguerTop forwards;
+}
+.close .lines::after {
+  animation: var(--timing-animation) closeHamburguerBottom forwards;
+}
+.close .lines {
+  animation: var(--timing-animation) closeHamburguerMiddle forwards;
+}
+@keyframes openHamburguerTop {
+  50%,
+  100% {
+    top: 0;
+    background-color: var(--color-active);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes openHamburguerBottom {
+  50%,
+  100% {
+    top: 0px;
+    background-color: var(--color-active);
+  }
+
+  100% {
+    opacity: 100;
+  }
+}
+@keyframes openHamburguerMiddle {
+  50%,
+  100% {
+    background-color: var(--color-active);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes closeHamburguerTop {
+  0% {
+    background-color: var(--color-active);
+    top: 0px;
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    top: var(--separation);
+    background-color: var(--color-default);
+  }
+}
+@keyframes closeHamburguerBottom {
+  0% {
+    background-color: var(--color-active);
+    top: 0px;
+    opacity: 100;
+  }
+  50% {
+    opacity: 100;
+  }
+
+  100% {
+    top: calc(var(--separation) * -1);
+    background-color: var(--color-default);
+
+    opacity: 100;
+  }
+}
+@keyframes closeHamburguerMiddle {
+  0% {
+    background-color: var(--color-active);
+
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    background-color: var(--color-default);
+    transform: rotate(0deg);
+  }
+}
