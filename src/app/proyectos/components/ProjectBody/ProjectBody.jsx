@@ -1,7 +1,7 @@
 'use client'
 
 import InfiniteScrollTrigger from './InfiniteScrollTrigger'
-import useProjectContext from '../../../../contexs/ProjectContext'
+import useProjectContext from '@/contexs/ProjectContext'
 import ProjectGalleryLoading from './ProjectGalleryLoading'
 const { useState } = require('react')
 const { default: ProjectNav } = require('../ProjectNav')

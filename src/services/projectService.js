@@ -46,4 +46,10 @@ export const getCover = async () => {
 export const getProjectByUrl = async (url) => {
   const q = query(col, limit(1), where('url', '==', url))
   return await getDocs(q)
+  // const res = await getDocs(q)
+  // const data = res.docs.map((doc) => ({
+  //   id: doc.id,
+  //   ...doc.data()
+  // }))
+  // return data[0]
 }

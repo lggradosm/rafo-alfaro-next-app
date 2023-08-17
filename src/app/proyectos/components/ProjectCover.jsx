@@ -9,6 +9,7 @@ function ProjectCover () {
         alt='equipo de rafo alfaro estudio creativo'
         priority
         placeholder='blur'
+        className='w-full'
       />
     </section>
   )
