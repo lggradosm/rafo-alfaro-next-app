@@ -3,7 +3,7 @@
 import {
   countProjects,
   getProjectsPagination
-} from '@services/projectService'
+} from '../services/projectService'
 
 const { createContext, useState, useContext, useEffect } = require('react')
 

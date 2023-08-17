@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import imageCover from '@assets/images/studio/home-nosotros.webp'
+import imageCover from '../../../assets/images/studio/home-nosotros.webp'
 function ProjectCover () {
   return (
     <section className='w-full h-full'>

@@ -1,12 +1,11 @@
 'use client'
 
 import InfiniteScrollTrigger from './InfiniteScrollTrigger'
-import useProjectContext from '@/contexs/ProjectContext'
+import useProjectContext from '../../../../contexs/ProjectContext'
 import ProjectGalleryLoading from './ProjectGalleryLoading'
-const { useState } = require('react')
-const { default: ProjectNav } = require('../ProjectNav')
-const { default: ProjectGallery } = require('./ProjectGallery')
-
+import ProjectGallery from './ProjectGallery'
+import ProjectNav from '../ProjectNav'
+import { useState } from 'react'
 export default function ProjectBody () {
   const [active, setActive] = useState('Todo')
   const changeActiveFilter = (filter) => {

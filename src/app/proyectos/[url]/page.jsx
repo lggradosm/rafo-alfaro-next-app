@@ -1,4 +1,4 @@
-import { getProjectByUrl } from '@services/projectService'
+import { getProjectByUrl } from '../../../services/projectService'
 
 export async function generateMetadata ({ params }) {
   // read route params

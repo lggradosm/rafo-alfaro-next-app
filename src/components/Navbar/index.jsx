@@ -2,12 +2,12 @@
 import { useEffect, useState } from 'react'
 import NavbarItemMobile from './NavbarItemMobile'
 import NavbarItem from './NavbarItem'
-import useVisibility from '@hooks/useVisibility'
+import useVisibility from '../../hooks/useVisibility'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import logoWhite from '@assets/images/logo-white_64.png'
+import logoWhite from '../../assets/images/logo-white_64.png'
 import Hamburguer from './Hamburguer'
-import { configureNav } from '@lib/configureNav'
+import { configureNav } from '../../lib/configureNav'
 import Image from 'next/image'
 export default function Navbar () {
   const SCROLL_POSITION_TRIGGER = 10
